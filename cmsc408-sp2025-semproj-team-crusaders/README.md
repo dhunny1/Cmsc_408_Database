@@ -1,6 +1,6 @@
 # cmsc-vcu/cmsc408-sp2025-semproj-template
 
-Authors: Hunny and Benhi Biguvu
+Authors: Hunny Biguvu
 # UTune Music app
 
 UTunes is a personal music library management system designed to let users organize, play, and manage their favorite songs without ads, subscriptions, or hidden fees. It allows users to browse songs, create playlists, and favorite tracks, all through a clean web interface. UTunes is built for everyday listeners, students, DJs, and music collectors who want full control over their music collection.
@@ -91,3 +91,4 @@ Before you begin, ensure you have the following installed:
     
 
 ---
+
