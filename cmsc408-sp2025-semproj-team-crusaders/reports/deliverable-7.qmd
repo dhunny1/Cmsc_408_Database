@@ -1,0 +1,183 @@
+---
+title: Implementation - Deliverable 7
+---
+# UTunes Music Library Management System
+
+## Overview
+UTunes is an ad-free personal music library management system that allows users to listen to and organize their favorite tracks anytime and anywhere. Focused on providing a seamless, distraction-free experience, UTunes gives users the ability to manage playlists, favorite songs, and control their collections — all through a clean, intuitive web interface.
+
+With no subscriptions, no ads, and no hidden fees, UTunes is ideal for everyday listeners, students, DJs, and music collectors who want full control over their music libraries.
+
+
+* [[Link to repository](https://github.com/cmsc-vcu/cmsc408-sp2025-semproj-team-crusaders)]
+* [[Link to UTune repository](https://github.com/dhunny1/UTune_Music_App/tree/master)]
+* [[Direct link to video pitch](https://vcu.mediaspace.kaltura.com/media/UTunes_/1_26za74uq)]
+* [[Direct link to design video](https://vcu.mediaspace.kaltura.com/media/Design+Documentation/1_ibvvysp1)]
+* [[Direct link to implementation video](https://vcu.mediaspace.kaltura.com/media/Implementation_UTune/1_tfn636ej)]  <!-- This is the new video -->
+
+# Design video
+
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1888231/sp/188823100/embedIframeJs/uiconf_id/28242251/partner_id/1888231?iframeembed=true&playerId=kaltura_player&entry_id=1_tfn636ej&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_o46csfn9" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Implementation_UTune"></iframe>
+
+
+
+
+
+## Application Components
+
+UTunes is built from several components that work together:
+
+- `index.html` – Main homepage and player interface.
+- `login.html` – User login page.
+- `signup.html` – New user registration page.
+- `reset_password.html` – Password reset functionality.
+- `style.css` – Styling for all pages to maintain a clean and consistent UI.
+- `script.js` – Handles user interactions, music playback, and dynamic updates.
+- `server.js` – Backend server handling authentication, playlist management, and music data delivery.
+- `database.sql` – Full SQL schema and seed data for users, songs, artists, playlists, and favorites.
+
+## Database Design
+
+The backend database supports UTunes' major features through the following tables:
+
+- `users`: Stores user account information (normal login and Google login supported).
+- `songs`: Stores song details including name, year, file path, and cover image.
+- `artists`: Stores artist information.
+- `years`: Stores distinct release years to normalize data.
+- `song_artist`: A join table linking songs with artists (many-to-many relationship).
+- `playlists`: Stores user-created playlists.
+- `playlist_songs`: Associates songs with playlists.
+- `song_favorites`: Tracks user-favorited songs.
+
+Initial data includes popular songs, artists, and years from 2005 to 2024, offering users a ready-to-use library.
+
+## Entity-Relationship Diagram (ERD)
+
+Our UTunes database schema includes several interconnected entities to support song playback, playlist creation, user account management, and song favoriting. Below is a detailed breakdown of the entities and relationships:
+
+### Entities
+
+- **Users**
+  - `user_id` (Primary Key)
+  - `username`
+  - `email`
+  - `password` (nullable for Google login)
+  - `google_id` (nullable)
+  - `date_created`
+
+- **Songs**
+  - `id` (Primary Key)
+  - `song_name`
+  - `year_id` (Foreign Key → `years.year_id`)
+  - `file_path`
+  - `image_path`
+
+- **Artists**
+  - `artist_id` (Primary Key)
+  - `artist_name`
+
+- **Years**
+  - `year_id` (Primary Key)
+  - `year_value`
+
+- **Playlists**
+  - `playlist_id` (Primary Key)
+  - `playlist_name`
+  - `user_id` (Foreign Key → `users.user_id`)
+
+- **Playlist_Songs** (Join Table for Many-to-Many relationship between Playlists and Songs)
+  - `playlist_id` (Foreign Key → `playlists.playlist_id`)
+  - `song_id` (Foreign Key → `songs.id`)
+  - **Primary Key**: (`playlist_id`, `song_id`)
+
+- **Song_Artist** (Join Table for Many-to-Many relationship between Songs and Artists)
+  - `song_id` (Foreign Key → `songs.id`)
+  - `artist_id` (Foreign Key → `artists.artist_id`)
+  - **Primary Key**: (`song_id`, `artist_id`)
+
+- **Song_Favorites**
+  - `favorite_id` (Primary Key)
+  - `user_id` (Foreign Key → `users.user_id`)
+  - `song_id` (Foreign Key → `songs.id`)
+  - `date_favorited`
+
+### Relationships Summary
+
+- One **User** can create many **Playlists**
+- One **User** can favorite many **Songs**
+- One **Song** can have multiple **Artists**
+- One **Artist** can contribute to multiple **Songs**
+- One **Playlist** can contain many **Songs**, and one **Song** can appear in multiple **Playlists**
+- **Songs** are linked to a normalized **Year** via a foreign key
+
+This schema enables us to support key UTunes features like browsing by artist/year, creating custom playlists, and tracking favorite songs.
+
+
+## Key Features
+
+- **Ad-Free Listening**: No interruptions, allowing users to fully enjoy their music.
+- **Playlist Management**:
+  - Create and delete playlists.
+  - Add or remove songs to/from playlists.
+- **Favorites System**:
+  - Favorite songs for quick access.
+  - Unfavorite songs anytime.
+- **User Authentication**:
+  - Secure signup, login, and password reset.
+  - Google authentication support.
+- **Responsive Design**:
+  - Clean, mobile-friendly interface.
+
+## How to Use UTunes
+
+1. **Sign Up or Log In**: Users can create an account or use Google to log in.
+2. **Browse Songs**: Explore available songs with cover images and metadata.
+3. **Create Playlists**: Group songs into custom playlists.
+4. **Favorite Songs**: Quickly mark songs as favorites for easy replay.
+5. **Enjoy Ad-Free Music**: Play songs without any ad interruptions.
+
+## Reflection
+
+While UTunes delivers a solid music management experience, there are opportunities for improvement:
+
+- **Simplified Song Adding**: Instead of requiring users to manually upload/download music files, future versions could allow:
+  - Direct music imports from local devices.
+  - Integration with a default music library (similar to Spotify).
+- **Improved Playlist Creation**: 
+  - Allow users to add songs directly to a playlist from the main music library view.
+  - Make playlist creation a smoother, one-step process.
+
+Implementing these improvements would make UTunes even more intuitive and efficient for all users.
+
+## Future Enhancements
+
+- **User Uploads**: Enabling users to upload their own MP3 files directly.
+- **Library Expansion**: Including preloaded song libraries by genre or mood.
+- **Dark Mode**: Offering a night-friendly UI option.
+- **Social Sharing**: Letting users share playlists with friends.
+
+## Conclusion
+
+UTunes successfully delivers an ad-free, user-controlled music experience. With an intuitive design and a solid technical foundation, it meets the needs of listeners who want full control over their libraries without compromise. With a few strategic improvements, UTunes has the potential to offer an even more powerful and enjoyable user experience.
+
+
+
+# Reflection
+
+How was your overall experience with this semester-long project?
+: Working on this semester-long project was an incredibly rewarding experience. It was exciting to build something that we had dreamed about and bring our ideas to life. Seeing our vision become a reality was truly inspiring and made the hard work feel worthwhile.
+
+
+How did the homeworks and discussions prepare you (or not) for successful completion of this project?
+: The homeworks played a major role in preparing us for this project. They taught us essential skills such as creating databases, designing tables, inserting data, and connecting the database to a web application. Although there were times when the workload felt a bit rushed, the knowledge we gained through these assignments was crucial for our success. In the end, everything came together well.
+
+
+What advice would you give to students working on this project in the future?
+: Our biggest piece of advice is to **start early**! Due to unforeseen circumstances, our team got a later start than we would have liked, and it made the project more stressful. Starting earlier would definitely make the process smoother and more enjoyable. Planning ahead allows more time for creativity, troubleshooting, and polishing the final product.
+
+
+# README
+
+::: {style="background:lightgray; margin-left:20px; border-top: 3px solid black; border-bottom: 3px solid black; padding-left:20px; padding-right:20px"}
+{{< include ../README.md >}}
+:::

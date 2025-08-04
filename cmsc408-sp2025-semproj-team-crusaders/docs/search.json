@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "deliverable-5.html",
+    "href": "deliverable-5.html",
+    "title": "Design Document - Deliverable 5",
+    "section": "",
+    "text": "(provide a 2-3 sentence summary of your project and the domain area. This is to help the reader zero in on your topic and the problem domain. You’ll providing more details below, so don’t overdo it!)"
+  },
+  {
+    "objectID": "deliverable-5.html#problem-domain",
+    "href": "deliverable-5.html#problem-domain",
+    "title": "Design Document - Deliverable 5",
+    "section": "Problem domain",
+    "text": "Problem domain\nprovide summary of the problem domain, providing context, scope of the area. For example, one might talk about the building murals in Richmond, and provide a bit of history (or pictures), so that someone understands the problem domain."
+  },
+  {
+    "objectID": "deliverable-5.html#need",
+    "href": "deliverable-5.html#need",
+    "title": "Design Document - Deliverable 5",
+    "section": "Need",
+    "text": "Need\nprovide a summary on why a database is needed, and what problem it might help solve. Why does this database need to be developed?"
+  },
+  {
+    "objectID": "deliverable-5.html#context-scope-and-perspective",
+    "href": "deliverable-5.html#context-scope-and-perspective",
+    "title": "Design Document - Deliverable 5",
+    "section": "Context, scope and perspective",
+    "text": "Context, scope and perspective\nWho is the DB for, or what perspective will the DB represent? In the domain of sports teams, is the database for the coach, team owner, player, or fan?"
+  },
+  {
+    "objectID": "deliverable-5.html#user-roles-and-use-cases",
+    "href": "deliverable-5.html#user-roles-and-use-cases",
+    "title": "Design Document - Deliverable 5",
+    "section": "User roles and use cases",
+    "text": "User roles and use cases\nIdentify the different user roles that will interact with the database. Describe their needs and how they will use the database. How will the database be used? Who will be using it? How will they be using it? How will the database be connected to other things?"
+  },
+  {
+    "objectID": "deliverable-5.html#security-and-privacy",
+    "href": "deliverable-5.html#security-and-privacy",
+    "title": "Design Document - Deliverable 5",
+    "section": "Security and Privacy",
+    "text": "Security and Privacy\nEffective database security ensures that sensitive data is protected from unauthorized access, corruption, or theft. Discuss the following key security and privacy concerns relevant to your database design.\nYou should convert these questions in statements, OR delete them altogether with your answer.\n\nAuthentication and Access Control\nWhat authentication mechanisms will be used to verify users (e.g., usernames and passwords, multi-factor authentication, OAuth, SSO)?\nWhat access control strategies will be implemented to ensure that users only have the necessary permissions? Consider role-based access control (RBAC) or attribute-based access control (ABAC).\nHow will the database handle session management, timeout policies, and failed login attempts?\n\n\nData Protection and Encryption\nWhat encryption methods will be used to secure data at rest and in transit? Consider AES encryption for storage and TLS/SSL for data transmission.\nHow will personally identifiable information (PII) and other sensitive data be handled securely?\nWill the database implement hashing or salting techniques for passwords or other sensitive data?\nHow will backups be managed securely to prevent data loss and unauthorized access?"
+  },
+  {
+    "objectID": "deliverable-5.html#ethical-and-professional-responsibilities",
+    "href": "deliverable-5.html#ethical-and-professional-responsibilities",
+    "title": "Design Document - Deliverable 5",
+    "section": "Ethical and Professional Responsibilities",
+    "text": "Ethical and Professional Responsibilities\nDiscuss the ethical and professional considerations related to your database project. Consider the following questions and complete the sections below. Your responses should provide a thoughtful and relevant discussion on the topics as they relate to your specific project.\n\nData Ethics\nAre there any ethical concerns related to the data being collected, stored, or analyzed? Could this data be misused?\n\n\nBias and Fairness\nDoes your database introduce or reinforce biases? How can your design minimize bias and promote fairness?\n\n\nData Ownership and Consent\nWho owns the data in your system? Are users aware of how their data will be used? Is explicit consent required?\n\n\nAccountability and Transparency\nIf something goes wrong with the database (e.g., data leaks, incorrect data handling), who is responsible? How can transparency be maintained?\n\n\nLegal and Compliance Issues\nAre there any relevant laws, regulations, or industry standards that should be considered (e.g., GDPR, HIPAA, FERPA)?"
+  },
+  {
+    "objectID": "deliverable-5.html#entity-relationship-diagrams",
+    "href": "deliverable-5.html#entity-relationship-diagrams",
+    "title": "Design Document - Deliverable 5",
+    "section": "Entity-relationship diagrams",
+    "text": "Entity-relationship diagrams\nCreated using proper software tools and consistent notation. Note: your design should consist of at least 5 major entities. Use Chen notation to show the high level entities and relationships, and Crows-Foot notation to show the attributes, primary and foreign keys.\nI’m sure that there will be more than one way to design your database to meet the needs of the problem statement. I’m looking for a discussion of why you make the design choices that you did. Were there any tradeoffs? Did you have to sacrifice one thing for another?\nNote that most design flexibility is around cardinality and participation."
+  },
+  {
+    "objectID": "deliverable-5.html#relational-schemas",
+    "href": "deliverable-5.html#relational-schemas",
+    "title": "Design Document - Deliverable 5",
+    "section": "Relational schemas",
+    "text": "Relational schemas\nListing of relations, their attributes, types, domain, and constraints, identification of the primary key and foreign keys and other constraints.\nStudents( id, first name, last name, email, github user id )"
+  },
+  {
+    "objectID": "deliverable-5.html#functional-dependencies-and-normalization",
+    "href": "deliverable-5.html#functional-dependencies-and-normalization",
+    "title": "Design Document - Deliverable 5",
+    "section": "Functional Dependencies and Normalization",
+    "text": "Functional Dependencies and Normalization\nA discussion of the functional dependencies in the proposed database schema, and a demonstration of the normalization of the relations to BCNF/4NF. This might consist of a description, in a text format, of the process of decomposing the tables extracted from the ERD translation into relations satisfying BCNF/4NF. Note that your decomposition via BCNF/4NF must be lossless."
+  },
+  {
+    "objectID": "deliverable-5.html#specific-queries",
+    "href": "deliverable-5.html#specific-queries",
+    "title": "Design Document - Deliverable 5",
+    "section": "Specific queries",
+    "text": "Specific queries\nGiven the context, scope, and perspective, the team should pose 20 distinct questions that the database can help answer. These can be general queries of use to all the users, or specific queries for different users or user roles. These questions should be written in precise words AND using relational algebra. Leverage Quarto to write the formulas! See: https://quarto.org/docs/authoring/markdown-basics.html#equations\nYou should also refer to the examples folder in Homework 3.\nNote: distinct queries are those that are entirely different. Counterexample: “Display a list of student last names in alphabetical order” is not distinct from “Display a list of student names and email addresses”. However, “Display a list of student last names in alphabetical order” is distinct from “Who are the five students with the highest GPA?”"
+  },
+  {
+    "objectID": "deliverable-5.html#sample-data",
+    "href": "deliverable-5.html#sample-data",
+    "title": "Design Document - Deliverable 5",
+    "section": "Sample Data",
+    "text": "Sample Data\nSample data for each relation your design documented above. I’m looking for 5-10 tuples in each relation, to clearly communicate the domains of each attribute. I suggest that you use chatgpt to help create the tables. NOTE - results from chatgpt are formatted in markdown, so if you ask chatgpt to produce a table of values with specific columns, you can cut/paste this directly into quarto and get a pretty table!\n\nStudent table\nBelow are sample xx data xx from the student table.\n\n\n\nID\nFirst Name\nLast Name\nEmail\nGithub User ID\n\n\n\n\n1\nAisha\nHassan\nahassan@vcu.edu\nahassan\n\n\n2\nKenji\nTakahashi\nktakahashi@vcu.edu\nktakahashi\n\n\n3\nLeila\nNguyen\nlnguyen@vcu.edu\nlnguyen\n\n\n4\nMateo\nGomez\nmgomez@vcu.edu\nmgomez\n\n\n5\nFatima\nKhan\nfkhan@vcu.edu\nfkhan\n\n\n6\nOmar\nEl-Sayed\noelsayed@vcu.edu\noelsayed\n\n\n7\nSofia\nPetrov\nspetrov@vcu.edu\nspetrov\n\n\n8\nLuca\nRossi\nlrossi@vcu.edu\nlrossi"
+  },
+  {
+    "objectID": "deliverable-5.html#project-management",
+    "href": "deliverable-5.html#project-management",
+    "title": "Design Document - Deliverable 5",
+    "section": "Project Management",
+    "text": "Project Management\nDraft Project schedule: Given that you need to submit a final project by April 29, and that this report is due March 2, what needs to happen between now and then to ensure that you get this whole thing done? I’m looking for a GANNT chart with tasks and milestones. See: https://mermaid.js.org/syntax/gantt.html"
+  },
+  {
+    "objectID": "deliverable-4.html",
+    "href": "deliverable-4.html",
+    "title": "Video Pitch - Deliverable 4",
+    "section": "",
+    "text": "Replace this file with your deliverable 4 video pitch.\n\nBe sure that the video iframe works.\nDELETE the README section from the replacement.\nUse the YAML header from THIS file, drop the YAML header from the original deliverable 4."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project documentation",
+    "section": "",
+    "text": "(Write this QMD as if you are leaving breadcrumbs for next semesters students in CMSC 408.)\n(provide an overview of the project?)\nDeliverable 4 contains our original video pitch.\nDeliverable 5 is our design document.\nDeliverable 7 is the final project report\n(what is the name of your team? why did you pick it?)\n(feel free to make this really, really pretty!)"
+  },
+  {
+    "objectID": "deliverable-7.html",
+    "href": "deliverable-7.html",
+    "title": "Implementation - Deliverable 7",
+    "section": "",
+    "text": "UTunes is an ad-free personal music library management system that allows users to listen to and organize their favorite tracks anytime and anywhere. Focused on providing a seamless, distraction-free experience, UTunes gives users the ability to manage playlists, favorite songs, and control their collections — all through a clean, intuitive web interface.\nWith no subscriptions, no ads, and no hidden fees, UTunes is ideal for everyday listeners, students, DJs, and music collectors who want full control over their music libraries.\n\n[Link to repository]\n[Link to UTune repository]\n[Direct link to video pitch]\n[Direct link to design video]\n[Direct link to implementation video]"
+  },
+  {
+    "objectID": "deliverable-7.html#overview",
+    "href": "deliverable-7.html#overview",
+    "title": "Implementation - Deliverable 7",
+    "section": "",
+    "text": "UTunes is an ad-free personal music library management system that allows users to listen to and organize their favorite tracks anytime and anywhere. Focused on providing a seamless, distraction-free experience, UTunes gives users the ability to manage playlists, favorite songs, and control their collections — all through a clean, intuitive web interface.\nWith no subscriptions, no ads, and no hidden fees, UTunes is ideal for everyday listeners, students, DJs, and music collectors who want full control over their music libraries.\n\n[Link to repository]\n[Link to UTune repository]\n[Direct link to video pitch]\n[Direct link to design video]\n[Direct link to implementation video]"
+  },
+  {
+    "objectID": "deliverable-7.html#application-components",
+    "href": "deliverable-7.html#application-components",
+    "title": "Implementation - Deliverable 7",
+    "section": "Application Components",
+    "text": "Application Components\nUTunes is built from several components that work together:\n\nindex.html – Main homepage and player interface.\nlogin.html – User login page.\nsignup.html – New user registration page.\nreset_password.html – Password reset functionality.\nstyle.css – Styling for all pages to maintain a clean and consistent UI.\nscript.js – Handles user interactions, music playback, and dynamic updates.\nserver.js – Backend server handling authentication, playlist management, and music data delivery.\ndatabase.sql – Full SQL schema and seed data for users, songs, artists, playlists, and favorites."
+  },
+  {
+    "objectID": "deliverable-7.html#database-design",
+    "href": "deliverable-7.html#database-design",
+    "title": "Implementation - Deliverable 7",
+    "section": "Database Design",
+    "text": "Database Design\nThe backend database supports UTunes’ major features through the following tables:\n\nusers: Stores user account information (normal login and Google login supported).\nsongs: Stores song details including name, year, file path, and cover image.\nartists: Stores artist information.\nyears: Stores distinct release years to normalize data.\nsong_artist: A join table linking songs with artists (many-to-many relationship).\nplaylists: Stores user-created playlists.\nplaylist_songs: Associates songs with playlists.\nsong_favorites: Tracks user-favorited songs.\n\nInitial data includes popular songs, artists, and years from 2005 to 2024, offering users a ready-to-use library."
+  },
+  {
+    "objectID": "deliverable-7.html#entity-relationship-diagram-erd",
+    "href": "deliverable-7.html#entity-relationship-diagram-erd",
+    "title": "Implementation - Deliverable 7",
+    "section": "Entity-Relationship Diagram (ERD)",
+    "text": "Entity-Relationship Diagram (ERD)\nOur UTunes database schema includes several interconnected entities to support song playback, playlist creation, user account management, and song favoriting. Below is a detailed breakdown of the entities and relationships:\n\nEntities\n\nUsers\n\nuser_id (Primary Key)\nusername\nemail\npassword (nullable for Google login)\ngoogle_id (nullable)\ndate_created\n\nSongs\n\nid (Primary Key)\nsong_name\nyear_id (Foreign Key → years.year_id)\nfile_path\nimage_path\n\nArtists\n\nartist_id (Primary Key)\nartist_name\n\nYears\n\nyear_id (Primary Key)\nyear_value\n\nPlaylists\n\nplaylist_id (Primary Key)\nplaylist_name\nuser_id (Foreign Key → users.user_id)\n\nPlaylist_Songs (Join Table for Many-to-Many relationship between Playlists and Songs)\n\nplaylist_id (Foreign Key → playlists.playlist_id)\nsong_id (Foreign Key → songs.id)\nPrimary Key: (playlist_id, song_id)\n\nSong_Artist (Join Table for Many-to-Many relationship between Songs and Artists)\n\nsong_id (Foreign Key → songs.id)\nartist_id (Foreign Key → artists.artist_id)\nPrimary Key: (song_id, artist_id)\n\nSong_Favorites\n\nfavorite_id (Primary Key)\nuser_id (Foreign Key → users.user_id)\nsong_id (Foreign Key → songs.id)\ndate_favorited\n\n\n\n\nRelationships Summary\n\nOne User can create many Playlists\nOne User can favorite many Songs\nOne Song can have multiple Artists\nOne Artist can contribute to multiple Songs\nOne Playlist can contain many Songs, and one Song can appear in multiple Playlists\nSongs are linked to a normalized Year via a foreign key\n\nThis schema enables us to support key UTunes features like browsing by artist/year, creating custom playlists, and tracking favorite songs."
+  },
+  {
+    "objectID": "deliverable-7.html#key-features",
+    "href": "deliverable-7.html#key-features",
+    "title": "Implementation - Deliverable 7",
+    "section": "Key Features",
+    "text": "Key Features\n\nAd-Free Listening: No interruptions, allowing users to fully enjoy their music.\nPlaylist Management:\n\nCreate and delete playlists.\nAdd or remove songs to/from playlists.\n\nFavorites System:\n\nFavorite songs for quick access.\nUnfavorite songs anytime.\n\nUser Authentication:\n\nSecure signup, login, and password reset.\nGoogle authentication support.\n\nResponsive Design:\n\nClean, mobile-friendly interface."
+  },
+  {
+    "objectID": "deliverable-7.html#how-to-use-utunes",
+    "href": "deliverable-7.html#how-to-use-utunes",
+    "title": "Implementation - Deliverable 7",
+    "section": "How to Use UTunes",
+    "text": "How to Use UTunes\n\nSign Up or Log In: Users can create an account or use Google to log in.\nBrowse Songs: Explore available songs with cover images and metadata.\nCreate Playlists: Group songs into custom playlists.\nFavorite Songs: Quickly mark songs as favorites for easy replay.\nEnjoy Ad-Free Music: Play songs without any ad interruptions."
+  },
+  {
+    "objectID": "deliverable-7.html#video-demonstration",
+    "href": "deliverable-7.html#video-demonstration",
+    "title": "Implementation - Deliverable 7",
+    "section": "Video Demonstration",
+    "text": "Video Demonstration\n[Insert Your Video Link Here]\nIn the video, Hunny demonstrates how to run the application, showcasing user signup, song browsing, playlist creation, and music playback features."
+  },
+  {
+    "objectID": "deliverable-7.html#reflection",
+    "href": "deliverable-7.html#reflection",
+    "title": "Implementation - Deliverable 7",
+    "section": "Reflection",
+    "text": "Reflection\nWhile UTunes delivers a solid music management experience, there are opportunities for improvement:\n\nSimplified Song Adding: Instead of requiring users to manually upload/download music files, future versions could allow:\n\nDirect music imports from local devices.\nIntegration with a default music library (similar to Spotify).\n\nImproved Playlist Creation:\n\nAllow users to add songs directly to a playlist from the main music library view.\nMake playlist creation a smoother, one-step process.\n\n\nImplementing these improvements would make UTunes even more intuitive and efficient for all users."
+  },
+  {
+    "objectID": "deliverable-7.html#future-enhancements",
+    "href": "deliverable-7.html#future-enhancements",
+    "title": "Implementation - Deliverable 7",
+    "section": "Future Enhancements",
+    "text": "Future Enhancements\n\nUser Uploads: Enabling users to upload their own MP3 files directly.\nLibrary Expansion: Including preloaded song libraries by genre or mood.\nDark Mode: Offering a night-friendly UI option.\nSocial Sharing: Letting users share playlists with friends."
+  },
+  {
+    "objectID": "deliverable-7.html#conclusion",
+    "href": "deliverable-7.html#conclusion",
+    "title": "Implementation - Deliverable 7",
+    "section": "Conclusion",
+    "text": "Conclusion\nUTunes successfully delivers an ad-free, user-controlled music experience. With an intuitive design and a solid technical foundation, it meets the needs of listeners who want full control over their libraries without compromise. With a few strategic improvements, UTunes has the potential to offer an even more powerful and enjoyable user experience."
+  },
+  {
+    "objectID": "deliverable-7.html#prerequisites-for-utunes-music-app",
+    "href": "deliverable-7.html#prerequisites-for-utunes-music-app",
+    "title": "Implementation - Deliverable 7",
+    "section": "Prerequisites for UTunes music app",
+    "text": "Prerequisites for UTunes music app\nBefore you begin, ensure you have the following installed:\n\nNode.js and npm: Download and install from https://nodejs.org/\nSQLite3: You need the command-line tool. Installation varies by OS (e.g., sudo apt-get install sqlite3 on Debian/Ubuntu, brew install sqlite3 on macOS)."
+  },
+  {
+    "objectID": "deliverable-7.html#installation",
+    "href": "deliverable-7.html#installation",
+    "title": "Implementation - Deliverable 7",
+    "section": "Installation",
+    "text": "Installation\n\nClone the repository: bash     git clone &lt;repository-url&gt;     cd &lt;repository-directory&gt;\nInstall dependencies: This project requires several Node.js packages. The core dependencies include: express, sqlite3, cors, bcrypt (or bcryptjs), jsonwebtoken, nodemailer, passport, passport-google-oauth20, dotenv, and express-session.\n(Note: The original instructions listed multiple npm install commands with some overlapping or potentially redundant packages like bcrypt and bcryptjs. Ensure your package.json file correctly lists all necessary dependencies.)\nRun the following command to install all dependencies listed in package.json:\nnpm install\n(If you don’t have a package.json, you would need to install them manually, e.g., npm install express sqlite3 cors bcryptjs jsonwebtoken nodemailer passport passport-google-oauth20 dotenv express-session)"
+  },
+  {
+    "objectID": "deliverable-7.html#configuration",
+    "href": "deliverable-7.html#configuration",
+    "title": "Implementation - Deliverable 7",
+    "section": "Configuration",
+    "text": "Configuration\n\nSet up Environment Variables: Create a file named .env in the root directory of the project. Add the following variables, replacing the placeholder values with your actual credentials:\n# .env file\n\n# Secret key for signing JWT tokens (choose a strong, unique secret)\nJWT_SECRET=your_super_secret_key\n\n# Gmail credentials for sending emails (e.g., password reset)\n# Use an \"App Password\" if you have 2FA enabled on your Google Account\n# See: [https://support.google.com/accounts/answer/185833](https://support.google.com/accounts/answer/185833)\nEMAIL_USER=your_gmail_account@gmail.com\nEMAIL_PASS=your_gmail_app_password\n\n# Google OAuth 2.0 Credentials for Google Sign-In\nGOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com\nGOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET\nObtain Google OAuth Credentials:\n\nGo to the Google Cloud Console.\nCreate a new project or select an existing one.\nNavigate to “APIs & Services” &gt; “Credentials”.\nClick “Create Credentials” &gt; “OAuth client ID”.\nConfigure the consent screen if you haven’t already.\nChoose “Web application” as the application type.\nAdd Authorized JavaScript origins (e.g., http://localhost:3000).\nAdd Authorized redirect URIs (e.g., http://localhost:3000/auth/google/callback). Check your application’s code for the exact callback URL required.\nClick “Create”. Copy the generated Client ID and Client Secret into your .env file.\n(Note: The original instructions mentioned enabling the Google+ API, which is deprecated. You typically need the “Google People API” or similar identity-related APIs depending on the scopes requested by Passport.) Further instructions can be found here: Google Sign-In for Websites\n\nCreate and Populate the Database: Make sure you have a database.sql file containing the necessary SQL commands to create your tables. Run the following command in your terminal from the project’s root directory: bash     sqlite3 database.db &lt; database.sql This will create a database.db file (or whatever name you choose) and execute the SQL script to set up the schema.\nAdd Media Files:\n\nPlace your music files (e.g., .mp3) into the /songs/ directory.\nPlace the corresponding album art images into the /images/ directory."
+  },
+  {
+    "objectID": "deliverable-7.html#running-the-application",
+    "href": "deliverable-7.html#running-the-application",
+    "title": "Implementation - Deliverable 7",
+    "section": "Running the Application",
+    "text": "Running the Application\n\nStart the server: bash     node server.js\nAccess the application: Open your web browser and navigate to: http://localhost:3000"
+  }
+]
